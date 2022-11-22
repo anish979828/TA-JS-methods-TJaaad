@@ -130,6 +130,7 @@ Example:
      let name = 'Arya Stark';
      name.endsWith("Stark"); //true
      let sentance = 'A quick brown fox jumped over a lazy dog..';
+    
      sentance.endsWith("dog"); //false
      let houseName = 'Starks';
      houseName.endsWith("t", 2); // true
