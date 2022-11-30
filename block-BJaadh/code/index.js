@@ -2,8 +2,6 @@
 var numbers = [1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6, 9];
 var strings = ['This', 'is', 'a', 'collection', 'of', 'words'];
 
-
-
 /*
 NOTE:
 While using methods like push, pop, sort etc it mutates the original array.
@@ -34,7 +32,7 @@ console.log(strings.slice(0,1))
 console.log(strings.filter((str) => str.includes("is")));
 
 // - Find all the words that contain 'is' use string method 'indexOf'
-// console.log(strings.filter((str) => str.indexOf("is") > 0 ))
+console.log(strings.filter((str) => str.indexOf("is") !== -1));
 
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
 console.log(numbers.every((num) => num % 3 == 0));
@@ -60,8 +58,7 @@ console.log(numbers.filter((num) => num % 2 !== 0));
 console.log(strings.unshift("Can"));
 
 // - Make a subset of numbers array [18,9,7,11]
-// let  a = (numbers.slice(numbers.indexOf(18),numbers.indexOf(3)))
-// console.log(a);
+ console.log(numbers.slice(numbers.indexOf(18),numbers.indexOf(3)))
 
 // - Make a subset of strings array ['a','collection']
 console.log(strings.slice(3,5));
@@ -71,11 +68,9 @@ console.log(strings.slice(3,5));
 console.log(numbers)
 
 // - Replace words in strings array with the length of the word
-console.log(strings.map((str) => str.length));
+let a = strings.map((str) => str.length);
 
 // - Find the sum of the length of words using above question
-
-
 
 // - Customers Array
 var customers = [
@@ -84,13 +79,26 @@ var customers = [
   { firstname: 'Dave', lastname: 'Jones' },
   { firstname: 'Jack', lastname: 'White' },
 ];
-// - Find all customers whose firstname starts with 'J'
 
+  customers.forEach((Obj) => {
+    if (Obj.firstname[0] == "J"){
+      console.log(Obj.firstname);
+    }
+  });
 
 // - Create new array with only first name
+console.log(customers.map((Obj) => Obj.firstname))
 
 // - Create new array with all the full names (ex: "Joe Blogs")
+let newArray = customers.map((str) => `${str.firstname} ${str.lastname}`);
+console.log(newArray)
 
 // - Sort the array created above alphabetically
+console.log(newArray.sort());
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
+// let fullname1 = newArray.unshift("ABhi");
+console.log(newArray.filter((str) => str.includes == "a" ))
+
+
+
