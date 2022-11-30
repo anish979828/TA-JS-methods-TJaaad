@@ -97,8 +97,8 @@ console.log(newArray)
 console.log(newArray.sort());
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
-// let fullname1 = newArray.unshift("ABhi");
-console.log(newArray.filter((str) => str.includes == "a" ))
+// // let fullname1 = newArray.unshift("ABhi");
+// console.log(newArray.filter((str) => str.includes == "a" ))
 
 
 
