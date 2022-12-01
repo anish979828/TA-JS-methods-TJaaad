@@ -4,14 +4,15 @@ For the given code below you have to draw the diagram of how these things are wo
 - using the `![](./img/imagename.png)` add images below each code snippet
 
 ```js
+
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
   alert(num);
 }
 let doubleNum = numbers.forEach(double);
-```
-![](./img/main.png)
 
+![](./img/prob1.png)
+```
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -19,6 +20,8 @@ function double(num) {
   return num * 2;
 }
 let doubleNum = numbers.forEach(double);
+
+![](./img/prob2.png)
 ```
 
 ```js
@@ -27,6 +30,8 @@ function double(num) {
   console.log(num);
 }
 let doubleNum = numbers.forEach(double);
+
+![](./img/prob3.png)
 ```
 
 ```js
@@ -35,6 +40,8 @@ function double(num) {
   return num * 2;
 }
 let doubleNumbers = numbers.map(double);
+
+![](./img/prob4.png);
 ```
 
 ```js
@@ -43,6 +50,8 @@ function addTwo(num) {
   return num + 2;
 }
 let doubleNumbers = numbers.map(addTwo);
+
+![](./img/prob5.png);
 ```
 
 ```js
@@ -51,6 +60,8 @@ function addTwo(num) {
   console.log(num);
 }
 let doubleNumbers = numbers.map(addTwo);
+
+![](./img/prob6.png);
 ```
 
 ```js
@@ -59,6 +70,8 @@ function addTwo(num) {
   alert(num);
 }
 let doubleNumbers = numbers.map(addTwo);
+
+![](./img/prob7.png);
 ```
 
 ```js
@@ -67,6 +80,8 @@ function isOdd(num) {
   return num % 2 !== 0;
 }
 let oddNumbers = numbers.filter(isOdd);
+
+![](./img/prob8.png);
 ```
 
 ```js
@@ -75,6 +90,8 @@ function test(num) {
   return num;
 }
 let filteredNumbers = numbers.filter(test);
+
+![](./img/prob9.png);
 ```
 
 ```js
@@ -83,6 +100,8 @@ function test(num) {
   console.log(num);
 }
 let filteredNumbers = numbers.filter(test);
+
+![](./img/prob10.png);
 ```
 
 ```js
@@ -91,6 +110,8 @@ function add(accumulator, currentValue) {
   return accumulator + currentValue;
 }
 let sum = numbers.reduce(add);
+
+![](./img/prob11.png);
 ```
 
 ```js
@@ -99,4 +120,6 @@ function add(accumulator, currentValue) {
   console.log(accumulator + currentValue);
 }
 let sum = numbers.reduce(add);
+
+![](./img/prob4.png);
 ```
