@@ -13,23 +13,68 @@ let persons = [
   { name: 'Arya', grade: 14, sex: 'F' },
 ];
 
-// NOTE: Use reduce method whereever you can to solve this exercise:
+// NOTE: Use reduce method wherever you can to solve this exercise:
 
 // Find the average grade
 
+// let grade = [];
+// for (let i = 0; i < persons.length; i++){
+//     grade.push(persons[i].grade)
+// }
+
+// let sum = 0;
+// for (let i = 0; i < grade.length; i++){
+//   sum += grade[i];
+// }
+
+// let avg = sum/grade.length
+// console.log(avg);
+
+let sumOfGrade = persons.reduce((acc,cv) => acc + cv.grade, 0);
+let avgOfGrade = sumOfGrade / persons.length
+console.log(avgOfGrade);
+
 // Find the average grade of male
+let male = persons.filter((obj) => obj.sex == "M");
+let sumOfGradeOfMale = male.reduce((acc,cv) => acc+cv.grade,0);
+let avgMale = sumOfGradeOfMale / male.length;
+console.log(avgMale)
 
 // Find the average grade of female
+let female = persons.filter((obj) => obj.sex == "F");
+let sumOfGradeOfFemale = female.reduce((acc,cv) => acc+cv.grade,0);
+let avgFemale = sumOfGradeOfFemale /female.length;
+
+console.log(avgFemale)
 
 // Find the highest grade
+let highestGrade = persons
+.map((person) => person.grade)
+.sort((a,b) => a-b)
+.pop();
+console.log(highestGrade);
+``
+// Find the highest grade in female
+let highestGradeOfFemale = female.map((person) => person.grade)
+.sort((a,b) => a-b)
+.pop();
+console.log(highestGradeOfFemale);
 
 // Find the highest grade in male
-
-// Find the highest grade in female
+let highestGradeOfMale = male.map(person => person.grade)
+.sort((a,b) => a-b)
+.pop();
+console.log(highestGradeOfMale)
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let highestGradeOfJ_P = persons
+.filter((obj) => obj.name.startsWith("J") ||obj.name.startsWith("P"))
+.map((obj) => obj.grade)
+.sort((a,b) => a-b)
+.pop();
+console.log(highestGradeOfJ_P)
 
-const fruitBasket = [
+  const fruitBasket = [
   'banana',
   'cherry',
   'orange',
@@ -51,6 +96,14 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
+let fruitsObj = fruitBasket.reduce((acc,cv) => {
+  if(!acc[cv]){
+    acc[cv] = 1;
+  }else{
+    acc[cv]++
+  }
+  return acc;
+},{})
 
 /* 
 
@@ -58,9 +111,14 @@ Use the fruitBasket array to create an array of array. Each array will contain t
 that fruit appeared. Use the variable defined above (fruitsObj). To get all the keys of an array you can use Object.keys()
 
 Output: 
-
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+let fruitsArray = Object.keys(fruitsObj).reduce((acc, cv) => {
+  acc = acc.concat([[cv, fruitsObj[cv]]]);
+  return acc;
+}, []);
+console.log(fruitsArray);
+
 
 const data = [
   [1, 2, 3],
@@ -70,6 +128,11 @@ const data = [
 ];
 
 // Using reduce flat data array
+let newAray = data.reduce((acc,cv) => {
+  acc = acc.concat(cv)
+  return acc;
+},[])
+console.log(newAray)
 
 const dataTwo = [
   [1, 2, 3],
@@ -79,6 +142,12 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
+let newArray2 = dataTwo.reduce((acc,cv) => {
+  acc = acc.concat(cv);
+  return acc;
+},[])
+console.log(newArray2)
+
 
 /*
 
@@ -89,6 +158,30 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+function increment(num){
+  return num + 1 
+}
+function double(num){
+  return num * 2;
+}
+function decrement(num){
+  return num - 1; 
+}
+function decrement(num){
+  return num - 1;
+}
+function double(num){
+  return num * 2;
+}
+function triple(num){
+  return num * 3; 
+}
+function half(num){
+  return Math.round(num / 2); 
+}
+function increment(num){
+  return num + 1 
+}
 
 let pipeline = [
   increment,
@@ -111,9 +204,13 @@ EXAMPLE:
   increment(3) - return 4
   double(4) - return 8
   decrement(8) - return 7
-
   ...
 */
+let result = pipeline.reduce((acc,cv) => {
+  acc = cv(acc);
+  return acc;
+},3)
+console.log(result)
 
 let pipeline2 = [
   increment,
@@ -128,5 +225,10 @@ let pipeline2 = [
   increment,
   triple,
 ];
-
+// 
 // Find the output using pipeline2 the initial value if 8
+let result2 = pipeline2.reduce((acc,cv) => {
+  acc = cv(acc);
+  return acc;
+},3)
+console.log(result2)
